@@ -84,8 +84,12 @@ public class DataBootstrap implements ApplicationListener<ContextRefreshedEvent>
         radish.setRecipe(guacamole);
 
         Category mexican = categoryRepository.findByName("Mexican").orElseThrow();
+        Category american = categoryRepository.findByName("American").orElseThrow();
         guacamole.getCategories().add(mexican);
-        
+        guacamole.getCategories().add(american);
+
+        guacamole.setDirections("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?\n");
+
         recipeRepository.save(guacamole);
 
         log.info("bootstrapping executed");

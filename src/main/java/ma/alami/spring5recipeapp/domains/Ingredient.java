@@ -22,7 +22,7 @@ public class Ingredient {
     private BigDecimal amount;
 
     @OneToOne
-    private UnitOfMeasure unit;
+    private UnitOfMeasure unitOfMeasure;
 
     @ManyToOne
     private Recipe recipe;
@@ -30,6 +30,6 @@ public class Ingredient {
     public Ingredient(String description, BigDecimal amount, UnitOfMeasure unit) {
         this.description = description;
         this.amount = amount;
-        this.unit = unit;
+        this.unitOfMeasure = unit;
     }
 }
